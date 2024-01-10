@@ -6,7 +6,7 @@
 /*   By: aroussea <aroussea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:42:22 by aroussea          #+#    #+#             */
-/*   Updated: 2024/01/05 17:33:07 by aroussea         ###   ########.fr       */
+/*   Updated: 2024/01/10 14:34:40 by aroussea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,12 @@ std::string getContent(std::ifstream &fileName) {
 	return (output);
 }
 
+void createWrite(std::string content, std::string name) {
+	std::ofstream myFile(name);
+	myFile << content;
+	myFile.close();
+}
+
 int main(int argc, char **argv) {
 	std::ifstream ifs(argv[1]);
 	std::string content;
@@ -62,8 +68,9 @@ int main(int argc, char **argv) {
 	}
 	
 	content = verifyString(getContent(ifs), argv[2], argv[3]);
-
-	std::cout << content <<std::endl;
+	std::string name(argv[1]);
+	name += ".replace";
+	createWrite(content, name);
 	
 	return (0);
 }
