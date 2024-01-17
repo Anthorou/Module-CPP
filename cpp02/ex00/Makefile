@@ -6,16 +6,17 @@
 #    By: aroussea <aroussea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/01 16:03:25 by aroussea          #+#    #+#              #
-#    Updated: 2024/01/16 16:03:56 by aroussea         ###   ########.fr        #
+#    Updated: 2024/01/17 15:34:21 by aroussea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -g -std=c++98
 TARGET = fixed
-SRCS := 
+SRCS := main.cpp \
+		Fixed.cpp
 
-HEADERS := 
+HEADERS := Fixed.hpp
 
 OBJS = $(patsubst %.cpp,bin/%.o,$(SRCS))
 
