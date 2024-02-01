@@ -33,3 +33,11 @@ Brain & Brain::operator=(Brain const &rhs) {
 	}
 	return (*this);
 }
+
+void Brain::setIdea(std::string const &idea, int index) {
+	_ideas[index] = idea;
+}
+
+std::string Brain::getIdea(int index) const {
+	return (_ideas[index]);
+}

@@ -20,7 +20,7 @@ class Animal {
 public :
 
 	Animal(void);
-	~Animal(void);
+	virtual ~Animal(void);
 	Animal(Animal const &cpy);
 	Animal(std::string const &typeOfAnimal);
 

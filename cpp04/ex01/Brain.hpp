@@ -27,6 +27,9 @@ public :
 	
 	Brain & operator=(Brain const &rhs);
 
+	void setIdea(std::string const &idea, int index);
+	std::string getIdea(int index) const;
+
 private :
 
 	std::string _ideas[MAX_IDEAS];

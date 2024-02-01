@@ -25,10 +25,13 @@ public :
 
 	Cat & operator=(Cat const &rhs);
 
-	virtual void makeSound(void) const;
+	void makeSound(void) const;
+
+	void setIdea(std::string const &idea, int index);
+	std::string getIdea(int index) const;
 
 private :
 
-	Brain *_cerveau;
+	Brain *_brain;
 	
 };
