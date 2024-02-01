@@ -12,7 +12,7 @@
 
 #include "Cat.hpp"
 
-Cat::Cat(void) {
+Cat::Cat(void) : Animal() {
 	std::cout << "Cat Default constructor called" << std::endl;
 	this->type = "Cat";
 }
@@ -21,7 +21,7 @@ Cat::~Cat(void) {
 	std::cout << "Cat Default destructor called" << std::endl;
 }
 
-Cat::Cat(Cat const &cpy) {
+Cat::Cat(Cat const &cpy) : Animal() {
 	std::cout << "Cat Copy constructor called" << std::endl;
 	*this = cpy;
 }

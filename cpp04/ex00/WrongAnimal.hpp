@@ -20,7 +20,7 @@ class WrongAnimal {
 public :
 
 	WrongAnimal(void);
-	~WrongAnimal(void);
+	virtual ~WrongAnimal(void);
 	WrongAnimal(WrongAnimal const &cpy);
 	WrongAnimal(std::string const &typeOfAnimal);
 

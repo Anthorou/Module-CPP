@@ -19,18 +19,23 @@
 int main()
 {
 	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const Animal* dog = new Dog();
+	const Animal* cat = new Cat();
 	const WrongAnimal* b = new WrongCat();
 	
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
+	std::cout << "dog type : " << dog->getType() << " " << std::endl;
+	std::cout << "cat type : " << cat->getType() << " " << std::endl;
+	cat->makeSound(); //will output the cat sound!
+	dog->makeSound();
 	meta->makeSound();
 
-	std::cout << b->getType() << " " << std::endl;
+	std::cout << "wrong animal type : " << b->getType() << " " << std::endl;
 	b->makeSound();
 	
+	delete(meta);
+	delete(dog);
+	delete(cat);
+	delete(b);
+
 	return 0;
 }

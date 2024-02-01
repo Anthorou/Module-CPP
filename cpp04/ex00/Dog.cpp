@@ -12,7 +12,7 @@
 
 #include "Dog.hpp"
 
-Dog::Dog(void) {
+Dog::Dog(void) : Animal() {
 	std::cout << "Dog Default constructor called" << std::endl;
 	this->type = "Dog";
 }
@@ -21,7 +21,7 @@ Dog::~Dog(void) {
 	std::cout << "Dog Default destructor called" << std::endl;
 }
 
-Dog::Dog(Dog const &cpy) {
+Dog::Dog(Dog const &cpy) : Animal() {
 	std::cout << "Dog Copy constructor called" << std::endl;
 	*this = cpy;
 }
