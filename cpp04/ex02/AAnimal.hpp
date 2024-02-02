@@ -27,7 +27,7 @@ public :
 	AAnimal & operator=(AAnimal const &rhs);
 
 	std::string getType(void) const;
-	virtual void makeSound(void) const;
+	virtual void makeSound(void) const = 0;
 
 protected :
 

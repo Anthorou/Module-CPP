@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
@@ -18,11 +18,11 @@
 #define RED "\033[31m"
 #define RESET "\033[0m"
 
-#define NO_ANIMAL 6
-
 int main()
 {
+	const AAnimal *b = new Cat();
 
+	b->makeSound();
 
 	return 0;
 }

@@ -12,7 +12,7 @@
 
 #include "Cat.hpp"
 
-Cat::Cat(void) : Animal() {
+Cat::Cat(void) : AAnimal() {
 	std::cout << "Cat Default constructor called" << std::endl;
 	this->type = "Cat";
 	this->_brain = new Brain;
@@ -23,7 +23,7 @@ Cat::~Cat(void) {
 	std::cout << "Cat Default destructor called" << std::endl;
 }
 
-Cat::Cat(Cat const &cpy) : Animal() {
+Cat::Cat(Cat const &cpy) : AAnimal() {
 	std::cout << "Cat Copy constructor called" << std::endl;
 	*this = cpy;
 }
