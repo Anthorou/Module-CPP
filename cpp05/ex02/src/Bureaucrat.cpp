@@ -6,7 +6,7 @@
 /*   By: aroussea <aroussea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:31:26 by aroussea          #+#    #+#             */
-/*   Updated: 2024/02/27 17:15:04 by aroussea         ###   ########.fr       */
+/*   Updated: 2024/02/27 18:08:58 by aroussea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,19 @@ size_t Bureaucrat::getGrade(void) const {
 }
 
 void Bureaucrat::signForm(AForm &form) {
-	if (!form.beSigned(*this))
-		std::cout << this->_name << " signed " << form.getName() << std::endl;
-	else
-		std::cout << this->_name << " couldn't sign " << form.getName() << " because the form is already signed!" << std::endl;
+	try {
+		form.beSigned(*this);
+	} catch (std::exception &e) {
+		std::cout << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+	}
+	std::cout << this->getName() << " signed " << form.getName() << std::endl;
+}
+
+void Bureaucrat::executeForm(AForm const & form) {
+	try {
+		form.execute(*this);
+	} catch (std::exception &e) {
+		std::cout << this->_name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+	}
+	std::cout << this->getName() << " executed " << form.getName() << std::endl;
 }

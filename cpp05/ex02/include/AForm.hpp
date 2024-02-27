@@ -6,7 +6,7 @@
 /*   By: aroussea <aroussea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:30:01 by aroussea          #+#    #+#             */
-/*   Updated: 2024/02/27 17:34:14 by aroussea         ###   ########.fr       */
+/*   Updated: 2024/02/27 17:53:04 by aroussea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ public:
 	};
 
 	int beSigned(Bureaucrat & bureaucrat);
-	virtual void execute(Bureaucrat const & executor) const = 0;
+	virtual bool execute(Bureaucrat const & executor) const = 0;
 	
 private:
 

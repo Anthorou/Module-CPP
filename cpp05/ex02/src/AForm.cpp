@@ -90,3 +90,11 @@ int AForm::beSigned(Bureaucrat & bureaucrat) {
 	else
 		return 1;
 }
+
+bool AForm::execute(Bureaucrat const & executor) const {
+	if (this->getSigned() == "No")
+		throw NotSignedException();
+	else if (executor.getGrade() > this->getGradeExec())
+		throw GradeTooLowException();
+	return true;
+}

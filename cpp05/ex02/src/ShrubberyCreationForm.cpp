@@ -6,7 +6,7 @@
 /*   By: aroussea <aroussea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:08:58 by aroussea          #+#    #+#             */
-/*   Updated: 2024/02/27 17:35:45 by aroussea         ###   ########.fr       */
+/*   Updated: 2024/02/27 17:58:07 by aroussea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & cpy) 
 
 ShrubberyCreationForm::~ShrubberyCreationForm(void) {}
 
-void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
-	if (this->getSigned() == "No")
-		throw NotSignedException();
-	else if (executor.getGrade() > this->getGradeExec())
-		throw GradeTooLowException();
+bool ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
+	AForm::execute(executor);
 	std::ofstream file(this->getTarget() + "_shrubbery");
 	file <<
 	"        *\n"
@@ -39,4 +36,5 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	"      *   *\n"
 	"      *   *";
 	file.close();
+	return true;
 }

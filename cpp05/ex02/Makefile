@@ -6,7 +6,7 @@
 #    By: aroussea <aroussea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/01 16:03:25 by aroussea          #+#    #+#              #
-#    Updated: 2024/02/27 17:19:04 by aroussea         ###   ########.fr        #
+#    Updated: 2024/02/27 17:42:12 by aroussea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,14 @@ SRCS := src/main.cpp \
 		src/Bureaucrat.cpp \
 		src/AForm.cpp \
 		src/ShrubberyCreationForm.cpp \
-		src/RobotomyRequestForm.cpp
+		src/RobotomyRequestForm.cpp \
+		src/PresidentialPardonForm.cpp
 
 HEADERS :=  include/Bureaucrat.hpp \
 			include/AForm.hpp \
 			include/ShrubberyCreationForm.hpp \
 			include/RobotomyRequestForm.hpp \
+			include/PresidentialPardonForm.hpp
 
 OBJS = $(patsubst %.cpp,bin/%.o,$(SRCS))
 

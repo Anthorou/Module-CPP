@@ -6,7 +6,7 @@
 /*   By: aroussea <aroussea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:31:28 by aroussea          #+#    #+#             */
-/*   Updated: 2024/02/27 16:07:45 by aroussea         ###   ########.fr       */
+/*   Updated: 2024/02/27 18:00:15 by aroussea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ public:
 	void		downGrade(void);
 
 	void		signForm(AForm &form);
+	void		executeForm(AForm const & form);
 
 	class GradeTooHighException: public std::exception {
 		public:

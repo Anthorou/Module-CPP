@@ -6,7 +6,7 @@
 /*   By: aroussea <aroussea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:13:42 by aroussea          #+#    #+#             */
-/*   Updated: 2024/02/27 17:18:30 by aroussea         ###   ########.fr       */
+/*   Updated: 2024/02/27 17:57:18 by aroussea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ public:
 	
 	RobotomyRequestForm & operator=(const  RobotomyRequestForm & rhs);
 
-	void execute(Bureaucrat const & executor) const;
+	bool execute(Bureaucrat const & executor) const;
 	
 };
