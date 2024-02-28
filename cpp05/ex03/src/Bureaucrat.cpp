@@ -6,11 +6,11 @@
 /*   By: aroussea <aroussea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:31:26 by aroussea          #+#    #+#             */
-/*   Updated: 2024/02/28 09:10:28 by aroussea         ###   ########.fr       */
+/*   Updated: 2024/02/27 18:08:58 by aroussea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "../include/Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(void) : _name("No Name"), _grade(150) {}
 
@@ -70,11 +70,20 @@ size_t Bureaucrat::getGrade(void) const {
 	return (this->_grade);
 }
 
-void Bureaucrat::signForm(Form &form) {
+void Bureaucrat::signForm(AForm &form) {
 	try {
 		form.beSigned(*this);
 	} catch (std::exception &e) {
 		std::cout << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
 	}
-	std::cout << this->_name << " signed " << form.getName() << std::endl;
+	std::cout << this->getName() << " signed " << form.getName() << std::endl;
+}
+
+void Bureaucrat::executeForm(AForm const & form) {
+	try {
+		form.execute(*this);
+	} catch (std::exception &e) {
+		std::cout << this->_name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+	}
+	std::cout << this->getName() << " executed " << form.getName() << std::endl;
 }
