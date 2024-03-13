@@ -6,7 +6,7 @@
 /*   By: aroussea <aroussea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 17:33:54 by aroussea          #+#    #+#             */
-/*   Updated: 2024/03/12 18:00:53 by aroussea         ###   ########.fr       */
+/*   Updated: 2024/03/13 14:25:47 by aroussea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,19 @@ void identify(Base* p) {
 		std::cout << "I am C" << std::endl;
 }
 
-void identifyRef(Base& p) {
+void identify(Base& p) {
+	try {
+		A test = dynamic_cast<A&>(p);
+		std::cout << "I am A" << std::endl;
+	} catch(std::exception & e) {}
+	try {
+		B test = dynamic_cast<B&>(p);
+		std::cout << "I am B" << std::endl;
+	} catch(std::exception & e) {}
+	try {
+		C test = dynamic_cast<C&>(p);
+		std::cout << "I am C" << std::endl;
+	} catch(std::exception & e) {}
 	
 }
 
@@ -46,7 +58,7 @@ int main() {
 	Base *p;
 	
 	p = generate();
-	identify(p);
+	identify(*p);
 
 	return (0);
 }
