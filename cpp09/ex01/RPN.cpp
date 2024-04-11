@@ -6,7 +6,7 @@
 /*   By: aroussea <aroussea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 09:00:35 by aroussea          #+#    #+#             */
-/*   Updated: 2024/04/11 11:18:06 by aroussea         ###   ########.fr       */
+/*   Updated: 2024/04/11 14:32:33 by aroussea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,37 +63,25 @@ int RPN::calcElements(std::string str) {
 	for (size_t i = 0; i < str.length(); i++) {
 		if (str[i] != ' ') {
 			if (!isdigit(str[i])) {
+				nb = this->top();
+				this->pop();
+				if (this->size() == 0)
+					throw InvalidOrder();
+				
 				switch (str[i]) {
 					case '+':
-						nb = this->top();
-						this->pop();
-						if (this->size() == 0)
-							throw InvalidOrder();
 						this->top() += nb;
 						break;
 					case '-':
-						nb = this->top();
-						this->pop();
-						if (this->size() == 0)
-							throw InvalidOrder();
 						this->top() -= nb;
 						break;
 					case '*':
-						nb = this->top();
-						this->pop();
-						if (this->size() == 0)
-							throw InvalidOrder();
 						this->top() *= nb;
 						break;
 					case '/':
-						nb = this->top();
-						this->pop();
-						if (this->size() == 0)
-							throw InvalidOrder();
-						if (this->top() != 0)
-							this->top() /= nb;
-						else
+						if (this->top()  == 0)
 							throw DivisionByZero();
+						this->top() /= nb;
 						break;
 				}
 			} else {
