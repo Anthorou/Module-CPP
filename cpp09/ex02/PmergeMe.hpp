@@ -6,7 +6,7 @@
 /*   By: aroussea <aroussea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 11:21:24 by aroussea          #+#    #+#             */
-/*   Updated: 2024/04/11 14:13:39 by aroussea         ###   ########.fr       */
+/*   Updated: 2024/04/15 15:37:44 by aroussea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 #include <iostream>
 #include <deque>
-#include <list>
+#include <vector>
+#include <ctime>
 
 class PmergeMe {
 	
@@ -28,9 +29,15 @@ public:
 	
 	template<typename T>
 	void	displayCont(T &container);
+
+	template <typename T>
+	void merge(T& container, int start, int mid, int end);
 	
-	void	mergeInsertDeque(std::deque<int> &lst);
-	void	mergeInsertList(std::list<int> &lst);
+	template <typename T>
+	void insertionSort(T& container, int start, int end);
+	
+	template <typename T>
+	void fordJohnsonMergeInsertionSort(T& container, int start, int end);
 
 	class NegativeNumber: public std::exception {
 		public:

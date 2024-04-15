@@ -6,7 +6,7 @@
 /*   By: aroussea <aroussea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 15:08:53 by aroussea          #+#    #+#             */
-/*   Updated: 2024/04/11 08:56:32 by aroussea         ###   ########.fr       */
+/*   Updated: 2024/04/15 16:29:41 by aroussea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	outputContent(std::string content, BitcoinExchange &btc) {
 			std::cout << "Error: Bad input => " << content << std::endl;
 		else if (nbLL < 0)
 			std::cout << "Error: Not a positive number." << std::endl;
-		else if (nbLL > INT_MAX)
+		else if (nbLL >= 1000)
 			std::cout << "Error: Too large a number." << std::endl;
 		else {
 			nb = std::stof(content.substr(pos + 2));
