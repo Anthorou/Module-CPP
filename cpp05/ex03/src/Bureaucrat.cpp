@@ -6,7 +6,7 @@
 /*   By: aroussea <aroussea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:31:26 by aroussea          #+#    #+#             */
-/*   Updated: 2024/02/27 18:08:58 by aroussea         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:34:16 by aroussea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ Bureaucrat & Bureaucrat::operator=(const Bureaucrat & rhs) {
 	if (this == &rhs)
 		return (*this);
 	this->_grade = rhs._grade;
-	this->_name = rhs._name;
 	return (*this);
 }
 

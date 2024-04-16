@@ -6,7 +6,7 @@
 /*   By: aroussea <aroussea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 09:12:29 by aroussea          #+#    #+#             */
-/*   Updated: 2024/02/28 09:48:16 by aroussea         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:53:55 by aroussea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,5 @@ AForm * Intern::makeForm(std::string name, std::string target) {
 			return all_forms[i](target);
 		}
 	}
-	std::cout << "Intern couldn't create " << name << " form" << std::endl;
-	return NULL;
+	throw std::runtime_error("Form couldn't be found!");
 }

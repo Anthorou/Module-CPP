@@ -6,7 +6,7 @@
 /*   By: aroussea <aroussea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:31:31 by aroussea          #+#    #+#             */
-/*   Updated: 2024/02/28 09:48:29 by aroussea         ###   ########.fr       */
+/*   Updated: 2024/04/16 12:54:19 by aroussea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int main() {
 	try {
 		Intern random;
 		AForm *form;
-		form = random.makeForm("shrubbery creation", "test");
+		form = random.makeForm("shrubbery creat", "test");
+		form->getName();
 	}
 	catch (std::exception & e) {
 		std::cout << e.what() << std::endl;

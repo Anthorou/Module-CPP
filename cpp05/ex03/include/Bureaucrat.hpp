@@ -6,7 +6,7 @@
 /*   By: aroussea <aroussea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 14:31:28 by aroussea          #+#    #+#             */
-/*   Updated: 2024/02/27 18:00:15 by aroussea         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:34:09 by aroussea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ public:
 	
 private:
 
-	std::string _name;
+	const std::string _name;
 	size_t		_grade;
 
 	size_t _checkGrade(size_t grade) const;
